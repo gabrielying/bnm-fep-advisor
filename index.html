@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a1628">
+<meta name="description" content="FEP Compass — Bank Negara Malaysia Foreign Exchange Policy advisor for banking officers. Notices 1–7, smart document tools and an AI compliance analyst.">
+<title>FEP Compass · BNM Foreign Exchange Policy Advisor</title>
+<!--
+  FEP COMPASS — v2.0  (revamp of AI FEP Advisor v1.9)
+  ────────────────────────────────────────────────────
+  AI PROVIDERS (Settings tab):
+    A) Gemini  — free key at https://aistudio.google.com/app/apikey
+    B) Ollama  — local & offline:  ollama pull qwen2.5:7b
+
+  FEP NOTICES: N1–N7 (effective 1 October 2025)
+  SOURCE: Official BNM FEP Notice PDFs — https://www.bnm.gov.my/fep/policies/notices
+  DISCLAIMER: Educational guidance only. Verify complex cases with BNM.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.9.0/tabler-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ════════ SIDEBAR (desktop / tablet) ════════ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark"><i class="ti ti-compass"></i></div>
+      <div>
+        <div class="brand-name">FEP <span>Compass</span></div>
+        <div class="brand-sub">BNM FX Policy Advisor</div>
+      </div>
+    </div>
+
+    <nav class="side-nav" aria-label="Primary">
+      <button class="side-link active" data-tab="dashboard"><i class="ti ti-layout-dashboard"></i><span>Dashboard</span></button>
+      <button class="side-link" data-tab="notices"><i class="ti ti-books"></i><span>FEP Notices</span></button>
+      <button class="side-link" data-tab="tools"><i class="ti ti-sparkles"></i><span>Smart Tools</span></button>
+      <button class="side-link" data-tab="advisor"><i class="ti ti-message-dots"></i><span>AI Advisor</span></button>
+      <button class="side-link" data-tab="settings"><i class="ti ti-settings"></i><span>Settings</span></button>
+    </nav>
+
+    <div class="side-foot">
+      <div class="side-foot-badge"><i class="ti ti-shield-check"></i> Notices N1–N7 · effective 1 Oct 2025</div>
+      <p>Educational guidance only — not legal advice. Verify complex cases at
+        <a href="https://www.bnm.gov.my/fep/policies/notices" target="_blank" rel="noopener">bnm.gov.my/fep</a>.</p>
+    </div>
+  </aside>
+
+  <!-- ════════ MAIN COLUMN ════════ -->
+  <div class="main">
+
+    <!-- Mobile topbar -->
+    <header class="topbar">
+      <div class="brand brand-sm">
+        <div class="brand-mark"><i class="ti ti-compass"></i></div>
+        <div class="brand-name">FEP <span>Compass</span></div>
+      </div>
+      <div class="topbar-badge">N1–N7 · Oct 2025</div>
+    </header>
+
+    <main id="views">
+
+      <!-- ──────── DASHBOARD ──────── -->
+      <section id="view-dashboard" class="view active" aria-label="Dashboard">
+        <div class="page">
+          <header class="page-head">
+            <h1 id="greeting">Good day</h1>
+            <p class="page-sub">Your foreign-exchange policy workspace — limits, declarations and quick answers.</p>
+          </header>
+
+          <div class="dash-grid">
+
+            <!-- Limit utilization -->
+            <article class="card span-2">
+              <div class="card-head">
+                <h2><i class="ti ti-gauge"></i> FEP Limit Utilisation</h2>
+                <span class="card-hint">Per calendar year · tap a ring to update</span>
+              </div>
+              <div id="rings" class="rings"></div>
+              <p class="micro-note"><i class="ti ti-info-circle"></i>
+                Limits apply to persons <em>with</em> <button class="term" data-term="DRB">Domestic Ringgit Borrowing</button>
+                converting Ringgit (Notice 3) or borrowing in foreign currency (Notice 2).</p>
+            </article>
+
+            <!-- Pending declarations -->
+            <article class="card">
+              <div class="card-head">
+                <h2><i class="ti ti-clipboard-check"></i> Pending Declarations</h2>
+                <button class="ghost-btn" id="decl-add"><i class="ti ti-plus"></i> Add</button>
+              </div>
+              <ul id="decl-list" class="decl-list"></ul>
+            </article>
+
+            <!-- Quick actions -->
+            <article class="card">
+              <div class="card-head"><h2><i class="ti ti-bolt"></i> Quick Actions</h2></div>
+              <div class="qa-grid">
+                <button class="qa" data-go="advisor"><i class="ti ti-message-dots"></i>Ask the Advisor</button>
+                <button class="qa" data-go="tools" data-tool="scan"><i class="ti ti-scan"></i>Scan a Document</button>
+                <button class="qa" data-go="tools" data-tool="analyst"><i class="ti ti-checkup-list"></i>Compliance Check</button>
+                <button class="qa" data-go="notices"><i class="ti ti-books"></i>Browse Notices</button>
+              </div>
+            </article>
+
+            <!-- Notices at a glance -->
+            <article class="card span-2">
+              <div class="card-head">
+                <h2><i class="ti ti-books"></i> Notices at a Glance</h2>
+                <button class="ghost-btn" data-go="notices">View all <i class="ti ti-arrow-right"></i></button>
+              </div>
+              <div id="dash-notices" class="dash-notices"></div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ──────── FEP NOTICES (Educational Hub) ──────── -->
+      <section id="view-notices" class="view" aria-label="FEP Notices">
+        <div class="page">
+          <header class="page-head">
+            <h1>FEP Notices — Educational Hub</h1>
+            <p class="page-sub">Bank Negara Malaysia Foreign Exchange Policy Notices 1–7, broken down into plain-language provisions.</p>
+          </header>
+
+          <div class="search-box" id="notices-search">
+            <i class="ti ti-search search-icon"></i>
+            <input id="notices-q" type="search" placeholder="Search all provisions — e.g. “export proceeds 6 months”, “RM10 million borrowing”…" autocomplete="off">
+            <button class="search-clear" id="notices-clear" title="Clear"><i class="ti ti-x"></i></button>
+          </div>
+
+          <div id="notices-results"></div>
+          <div id="notices-cards" class="notice-cards"></div>
+
+          <section class="card glossary-card">
+            <div class="card-head"><h2><i class="ti ti-vocabulary"></i> Key Terms Glossary</h2>
+              <span class="card-hint">Tap a term for its FEP definition</span></div>
+            <div id="glossary" class="glossary"></div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ──────── SMART TOOLS ──────── -->
+      <section id="view-tools" class="view" aria-label="Smart Tools">
+        <div class="page">
+          <header class="page-head">
+            <h1>Smart Tools</h1>
+            <p class="page-sub">Read documents, extract FX entities and run an instant compliance health-check against Notices 1–7.</p>
+          </header>
+
+          <div class="tool-tabs" role="tablist">
+            <button class="tool-tab active" data-tool="scan" role="tab"><i class="ti ti-scan"></i> Document &amp; Image Reader</button>
+            <button class="tool-tab" data-tool="pdf" role="tab"><i class="ti ti-file-type-pdf"></i> PDF Reader &amp; Validator</button>
+            <button class="tool-tab" data-tool="analyst" role="tab"><i class="ti ti-brain"></i> AI Compliance Analyst</button>
+          </div>
+
+          <!-- OCR scanner -->
+          <div id="tool-scan" class="tool-panel active">
+            <div class="dropzone" id="scan-drop">
+              <i class="ti ti-cloud-upload"></i>
+              <strong>Upload or drop an image</strong>
+              <span>Forms, receipts, invoices, remittance slips — JPG / PNG</span>
+              <input type="file" id="scan-file" accept="image/*" hidden>
+            </div>
+            <div id="scan-stage" class="stage hidden">
+              <div class="stage-side">
+                <img id="scan-preview" alt="Uploaded document preview">
+                <div class="stage-actions">
+                  <button class="btn primary" id="scan-run"><i class="ti ti-text-scan-2"></i> Extract Text (OCR)</button>
+                  <button class="btn" id="scan-reset"><i class="ti ti-rotate"></i> New Image</button>
+                </div>
+                <div id="scan-progress" class="progress hidden"><div id="scan-bar"></div><span id="scan-pct">0%</span></div>
+              </div>
+              <div class="stage-main">
+                <div id="scan-entities"></div>
+                <div class="extract-box"><div class="extract-label">Extracted text</div><div id="scan-text" class="extract-text">—</div></div>
+                <button class="btn primary hidden" id="scan-send"><i class="ti ti-brain"></i> Send to AI Analyst</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PDF validator -->
+          <div id="tool-pdf" class="tool-panel">
+            <div class="dropzone" id="pdf-drop">
+              <i class="ti ti-file-type-pdf"></i>
+              <strong>Upload or drop a PDF</strong>
+              <span>Agreements, facility letters, official banking documents</span>
+              <input type="file" id="pdf-file" accept="application/pdf" hidden>
+            </div>
+            <div id="pdf-stage" class="stage hidden">
+              <div class="stage-side">
+                <div class="pdf-meta card-lite" id="pdf-meta"></div>
+                <div class="stage-actions">
+                  <button class="btn" id="pdf-reset"><i class="ti ti-rotate"></i> New PDF</button>
+                </div>
+              </div>
+              <div class="stage-main">
+                <div id="pdf-entities"></div>
+                <div id="pdf-flags"></div>
+                <div class="extract-box"><div class="extract-label">Extracted text (first pages)</div><div id="pdf-text" class="extract-text">—</div></div>
+                <button class="btn primary hidden" id="pdf-send"><i class="ti ti-brain"></i> Send to AI Analyst</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI analyst -->
+          <div id="tool-analyst" class="tool-panel">
+            <form id="analyst-form" class="analyst-form" novalidate>
+              <div id="analyst-import" class="import-chip hidden"></div>
+
+              <div class="form-grid">
+                <label class="field">
+                  <span class="field-lbl">Who is transacting? <button type="button" class="term" data-term="Resident">?</button></span>
+                  <select id="af-who" required>
+                    <option value="">Select party…</option>
+                    <option>Resident Individual</option>
+                    <option>Resident Entity (company)</option>
+                    <option>Non-Resident Individual</option>
+                    <option>Non-Resident Entity</option>
+                    <option>Licensed Onshore Bank (LOB)</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span class="field-lbl">What is the transaction?</span>
+                  <select id="af-what" required>
+                    <option value="">Select type…</option>
+                    <option>Buy / sell foreign currency</option>
+                    <option>Forward / hedging contract</option>
+                    <option>Borrowing</option>
+                    <option>Lending</option>
+                    <option>Financial guarantee</option>
+                    <option>Investment in foreign currency asset</option>
+                    <option>Payment or receipt</option>
+                    <option>Issue securities / financial instrument</option>
+                    <option>Carry cash across the border</option>
+                    <option>Export of goods (proceeds)</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span class="field-lbl">Where? <small>(countries / in or outside Malaysia)</small></span>
+                  <input id="af-where" maxlength="80" placeholder="e.g. Malaysia → Singapore">
+                </label>
+                <label class="field">
+                  <span class="field-lbl">Why? <small>(purpose, max 160 chars)</small></span>
+                  <input id="af-why" maxlength="160" placeholder="e.g. investing in overseas property for education">
+                </label>
+                <label class="field">
+                  <span class="field-lbl">Amount</span>
+                  <div class="amount-row">
+                    <select id="af-ccy">
+                      <option>MYR</option><option>USD</option><option>EUR</option><option>GBP</option>
+                      <option>SGD</option><option>JPY</option><option>CNY</option><option>AUD</option><option>Other</option>
+                    </select>
+                    <input id="af-amt" type="number" min="0" step="any" placeholder="0.00">
+                  </div>
+                </label>
+                <label class="field">
+                  <span class="field-lbl">Additional context <small>(optional, max 400 chars)</small></span>
+                  <textarea id="af-ctx" maxlength="400" rows="2" placeholder="e.g. the individual has an existing housing loan in Ringgit…"></textarea>
+                </label>
+              </div>
+
+              <button class="btn primary lg" id="analyst-run" type="submit">
+                <i class="ti ti-checkup-list"></i> Run Compliance Health-Check
+              </button>
+              <p class="micro-note"><i class="ti ti-database-search"></i>
+                Structured fields keep the retrieval (RAG) precise — the analyst cross-references Notices 1–7 and cites exact paragraphs.</p>
+            </form>
+            <div id="analyst-out"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ──────── AI ADVISOR ──────── -->
+      <section id="view-advisor" class="view view-chat" aria-label="AI Advisor">
+        <div class="chat-shell">
+          <div class="notice-bar" id="advisor-pills"></div>
+          <div class="advisor-hdr">
+            <span class="advisor-scope" id="advisor-scope">Scope: All Notices</span>
+            <div class="advisor-hdr-actions">
+              <button class="ghost-btn" id="history-btn"><i class="ti ti-history"></i> History</button>
+              <button class="ghost-btn" id="new-chat-btn"><i class="ti ti-plus"></i> New Chat</button>
+            </div>
+          </div>
+          <div class="msgs" id="msgs"></div>
+          <div class="chat-bar">
+            <textarea id="chat-inp" rows="2" maxlength="600"
+              placeholder="Describe the FX transaction — who, what, where, why and the amount…"></textarea>
+            <button class="send-btn" id="send-btn" disabled><i class="ti ti-send-2"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ──────── SETTINGS ──────── -->
+      <section id="view-settings" class="view" aria-label="Settings">
+        <div class="page narrow">
+          <header class="page-head">
+            <h1>Settings</h1>
+            <p class="page-sub">Connect an AI provider for the Advisor and Compliance Analyst. Reference search works without any setup.</p>
+          </header>
+          <div id="settings-content"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Mobile bottom navigation -->
+    <nav class="bottombar" aria-label="Primary mobile">
+      <button class="bb-tab active" data-tab="dashboard"><i class="ti ti-layout-dashboard"></i><span>Home</span></button>
+      <button class="bb-tab" data-tab="notices"><i class="ti ti-books"></i><span>Notices</span></button>
+      <button class="bb-tab" data-tab="tools"><i class="ti ti-sparkles"></i><span>Tools</span></button>
+      <button class="bb-tab" data-tab="advisor"><i class="ti ti-message-dots"></i><span>Advisor</span></button>
+      <button class="bb-tab" data-tab="settings"><i class="ti ti-settings"></i><span>More</span></button>
+    </nav>
+  </div>
+</div>
+
+<!-- ════════ NOTICE DETAIL MODAL ════════ -->
+<div class="overlay" id="notice-overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <div class="modal-tag" id="nm-tag"></div>
+        <div class="modal-name" id="nm-name"></div>
+      </div>
+      <button class="modal-close" data-close="notice-overlay"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="modal-body" id="nm-body"></div>
+    <div class="modal-foot">
+      <a class="btn" id="nm-fulltext" href="#" target="_blank" rel="noopener"><i class="ti ti-file-text"></i> Full Notice (BNM)</a>
+      <button class="btn" id="nm-check"><i class="ti ti-help-hexagon"></i> Am I Affected?</button>
+      <button class="btn primary" id="nm-ask"><i class="ti ti-message-dots"></i> Ask Advisor</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ QUICK-CHECK WIZARD ════════ -->
+<div class="overlay" id="qc-overlay">
+  <div class="modal modal-sm" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <div class="modal-tag" id="qc-tag">AM I AFFECTED?</div>
+        <div class="modal-name" id="qc-name"></div>
+      </div>
+      <button class="modal-close" data-close="qc-overlay"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="modal-body" id="qc-body"></div>
+  </div>
+</div>
+
+<!-- ════════ HISTORY SHEET ════════ -->
+<div class="overlay" id="hist-overlay">
+  <div class="modal modal-sm" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div><div class="modal-tag">ADVISOR</div><div class="modal-name">Chat History</div></div>
+      <button class="modal-close" data-close="hist-overlay"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="modal-body" id="hist-body"></div>
+  </div>
+</div>
+
+<!-- ════════ TERM POPOVER ════════ -->
+<div id="term-pop" class="term-pop hidden" role="tooltip">
+  <div class="term-pop-name" id="tp-name"></div>
+  <div class="term-pop-def" id="tp-def"></div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
