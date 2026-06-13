@@ -15,7 +15,7 @@ A modern, minimalist, education-first web app for **banking officers** (and comp
 │  Desktop: left sidebar nav   ·   Mobile: bottom tab bar      │
 ├──────────────┬───────────────────────────────────────────────┤
 │ 1 FEP Notices│ Educational hub (default landing page):       │
-│   (hub)      │ N1–N7 cards → accordion provisions,           │
+│   (hub)      │ N1–N7 cards → Provisions/FAQs accordions,     │
 │              │ "Am I Affected?" wizards, searchable, glossary │
 │ 2 Dashboard  │ Limit utilisation rings · pending declarations│
 │              │ quick actions · notices at a glance ·         │
@@ -35,11 +35,11 @@ A modern, minimalist, education-first web app for **banking officers** (and comp
 
 ### 1 · FEP Notices (Educational Hub) — default landing page
 - **Onboarding checklist** — first-run only, a dismissible card with 3 quick-start steps: explore a notice, try "Am I Affected?", and connect an AI provider (with a note that Gemini's free tier has a daily request limit, and Ollama is unlimited/offline).
-- **Global provision search** — substring + BM25 fallback across all 60+ provisions, highlighted matches, click-through to the exact provision.
-- **Notice cards (N1–N7)** — number badge, plain-English description, provision count, and two actions:
-  - **Explore** → bottom sheet (mobile) / centered modal (desktop) with accordion provisions; regulatory jargon (Resident, NRFI, DRB…) is auto-linked to tap-for-definition tooltips.
+- **Global provision search** — substring + BM25 fallback across all provisions and FAQs, highlighted matches, click-through to the exact provision or FAQ.
+- **Notice cards (N1–N7)** — number badge, plain-English description, provision (and FAQ, where available) counts, and two actions:
+  - **Explore** → bottom sheet (mobile) / centered modal (desktop). Notices with official FAQs (N1, N2, N3, N4, N7) show a **Provisions / FAQs tab switcher**, each an accordion; regulatory jargon (Resident, NRFI, DRB…) is auto-linked to tap-for-definition tooltips throughout.
   - **Am I Affected?** → 2–3 question yes/no decision tree per notice ending in a colour-coded result (green = fine / amber = limits engaged / blue = check details) with a one-tap handoff to the AI Advisor.
-- **Glossary** — 18 key FEP terms as tappable chips.
+- **Glossary** — 56 key FEP terms (from the FEP Notices and the official Preamble & Interpretation definitions) as tappable chips.
 - The official source (FEP Authority notices page) is linked once, in **Settings** — not repeated on every notice.
 
 ### 2 · Dashboard
