@@ -107,12 +107,36 @@ const NOTICES = {
       {ref:'Part C, Para 5',title:'Reporting obligation — proceeds not received within 24 months',body:'Where export proceeds are not received within 24 months from the date of shipment, the Resident exporter shall notify the FEP Authority on the outstanding proceeds within TWENTY-ONE (21) DAYS after the end of each calendar year via https://bnm.my/fep.'},
       {ref:'Appendix B',title:'Approved offsetting and writing-off arrangements for export proceeds',body:'A Resident exporter may receive less than full value where it enters into: (a) offsetting arrangement with Non-Resident to offset export proceeds with imports of goods/services by exporter, warranty claims, dividend payments, other Current Account Transactions, or repayment of FCY Borrowing under Notice 2; or (b) writing-off arrangement where Non-Resident buyer is in liquidation, or proceeds cannot be received after at least 24 months from shipment despite following up.'},
     ],
-    kw:['export','export proceeds','receipt','payment','shipment','6 months','24 months','RM250 million','reporting','exporter','deduction','freight','insurance','commission','Trade FCA','offsetting','write-off','consignment','border trade','gift','sample','notify BNM','repatriate export'] },
+    kw:['export','export proceeds','receipt','payment','shipment','6 months','24 months','RM250 million','reporting','exporter','deduction','freight','insurance','commission','Trade FCA','offsetting','write-off','consignment','border trade','gift','sample','notify BNM','repatriate export'],
+    faqs: [
+      {ref:'FAQ Q1',title:'What is the scope of "export of goods"?',body:'Export of goods covers: (a) any movement or transfer of goods by land, sea or air from Malaysia to any territory outside Malaysia; or (b) any transfer of ownership in goods originated from Malaysia by a Resident to a Non-Resident abroad, or to a Labuan entity which the FEP Authority has declared a Non-Resident — even where the goods are shipped to another Resident or remain onshore (e.g. in a Non-Resident\'s bonded warehouse).'},
+      {ref:'FAQ Q2',title:'Can a Resident exporter retain FC export proceeds overseas?',body:'No. The Resident exporter must repatriate into Malaysia the full value of export of goods proceeds, either in Ringgit or Foreign Currency (FC), within 6 months from the date of shipment. The proceeds can be retained in a Ringgit account or Trade FCA maintained with onshore banks.'},
+      {ref:'FAQ Q3',title:'Does repatriation apply to export of services or merchanting trade?',body:'No, the repatriation requirement applies to export of goods only. It does not apply to FC proceeds from export of services or merchanting trade (selling goods to a Non-Resident where the goods are shipped between two overseas locations without entering or leaving Malaysia).'},
+      {ref:'FAQ Q4',title:'Are toll manufacturing proceeds treated as export of goods?',body:'Yes. Export proceeds from toll manufacturing performed by a Resident for a Non-Resident (where the Resident receives semi-finished goods from the Non-Resident for further processing and onward selling back to the Non-Resident) are deemed export of goods and subject to the requirements stipulated in Notice 7.'},
+      {ref:'FAQ Q5',title:'Is there a timeline to repatriate export proceeds?',body:'Yes. Export proceeds shall be repatriated immediately upon receipt of payment, which must be within 6 months from the date of shipment — so credit terms given to Non-Resident clients cannot exceed 6 months from the shipment date. This timeline can be extended up to 24 months for permitted reasons (see FAQ Q6) without prior approval from the FEP Authority. If proceeds remain outstanding after 24 months from shipment, the Resident exporter must notify the FEP Authority within 21 days after the end of each calendar year via https://bnm.my/fep.'},
+      {ref:'FAQ Q6',title:'What are the permitted reasons for the 24-month repatriation extension?',body:'(a) The Resident exporter has no control over the delay in receiving proceeds, including: buyer in financial difficulties; buyer cancels, delays, disputes or does not respond to payment requests; FX restrictions in the buyer\'s country; quality and/or quantity claims; or incidence of fraud. (b) Credit terms of up to 24 months given by the Resident exporter for: consignment sale; or goods that involve testing and commissioning.'},
+      {ref:'FAQ Q7',title:'Does this apply to individuals, sole proprietorships and partnerships?',body:'Yes, the export of goods requirements apply to all Residents including individuals, sole proprietorships and general partnerships — other than export of goods by a Resident individual for personal consumption.'},
+      {ref:'FAQ Q8',title:'How is the 6-month repatriation period computed?',body:'It is calculated from the date of shipment. Example: invoice dated 5 Feb, shipment dated 5 Mar — if payment is received by 4 Sept (within 6 months of shipment), no approval from the FEP Authority is required. If payment is instead received on 5 Sept (after 6 months) and the delay is not due to a permitted reason, approval from the FEP Authority is required and the application must be submitted before the 6-month period expires.'},
+      {ref:'FAQ Q9',title:'Can export proceeds be retained in FC after repatriation?',body:'Yes. A Resident exporter can freely retain any amount of export proceeds in FC in its Trade FCA maintained with a licensed onshore bank, or convert it to Ringgit according to its FC and Ringgit cash-flow needs.'},
+      {ref:'FAQ Q10',title:'Is there a time limit on retaining FC proceeds in Trade FCA?',body:'No, there is no time limit on the retention of export proceeds in a Trade FCA.'},
+      {ref:'FAQ Q11',title:'What offsetting and writing-off arrangements are approved?',body:'Export proceeds can be offset against the following FC obligations owed to a Non-Resident: (a) import of goods or services; (b) warranty claims; (c) dividend payments; (d) other Current Account Transactions (e.g. management fees); or (e) repayment of FC Borrowing — including global offsetting arrangements undertaken through the Resident exporter\'s Non-Resident treasury management centre (TMC). Export proceeds can also be written off where: (a) the Non-Resident buyer is in liquidation; or (b) the proceeds cannot be received from the Non-Resident buyer at least 24 months from the date of shipment despite following up.'},
+      {ref:'FAQ Q12',title:'Can proceeds be offset against anticipated future FC obligations?',body:'No. The offsetting flexibility only applies to incurred FC obligations based on a Firm Commitment. Otherwise, the Resident exporter must repatriate the export proceeds to Malaysia in full value.'},
+      {ref:'FAQ Q13',title:'Are supporting documents needed for offsetting?',body:'Yes. Documents are required to substantiate that the export proceeds are being offset only against permitted reasons, subject to the licensed onshore bank\'s due diligence process.'},
+      {ref:'FAQ Q14',title:'Can proceeds be offset against overseas investments or direct commodity hedging with a Non-Resident?',body:'No. A Resident exporter is not allowed to offset export proceeds against its investment abroad or against a commodity hedging contract entered directly with a Non-Resident counterparty.'},
+      {ref:'FAQ Q15',title:'Can a Resident exporter open multiple Trade FCAs?',body:'Yes, a Resident exporter can open multiple Trade FCAs with onshore banks, subject to each onshore bank\'s own due diligence process.'},
+      {ref:'FAQ Q16',title:'What can the retained FC funds be used for?',body:'Retained FC funds can be used, among others, to meet FC obligations such as import payments and FC Borrowing repayments. Using export proceeds for investment in FC assets is subject to the investment in FC asset limit stipulated in Notice 3.'},
+      {ref:'FAQ Q17',title:'Can a Resident without export proceeds convert Ringgit to FC for import or borrowing obligations?',body:'Yes, conversion of Ringgit into FC to pay import and Borrowing obligations is allowed.'},
+      {ref:'FAQ Q18',title:'Can funds move between Trade FCA and Investment FCA?',body:'Yes, transferring funds from a Trade FCA to an Investment FCA is allowed, subject to the requirements of Notice 3. There is no restriction on transferring funds from an Investment FCA to a Trade FCA, or between accounts of the same type (Trade FCA to Trade FCA, or Investment FCA to Investment FCA) of the same account holder.'},
+      {ref:'FAQ Q19',title:'Must a Resident exporter submit reports on exports of goods?',body:'A Resident exporter that meets the requirement in Part C of Notice 7 (e.g. annual gross export exceeding RM250 million) shall submit a report on Export of Goods as and when required by the FEP Authority. If a Resident exporter is required to submit such a report, the requirement will be communicated via a letter from the FEP Authority.'},
+      {ref:'FAQ Q20',title:'Can approval applications and notifications be combined?',body:'No. Applications for approval and notifications cannot be combined and must be submitted separately.'},
+    ] },
 };
 
 const CHUNKS = [];
-Object.values(NOTICES).forEach(n => n.secs.forEach(s =>
-  CHUNKS.push({ noticeId:n.id, noticeName:n.short, noticeTitle:n.title, ref:s.ref, title:s.title, body:s.body })));
+Object.values(NOTICES).forEach(n => {
+  n.secs.forEach(s => CHUNKS.push({ noticeId:n.id, noticeName:n.short, noticeTitle:n.title, ref:s.ref, title:s.title, body:s.body }));
+  (n.faqs||[]).forEach(s => CHUNKS.push({ noticeId:n.id, noticeName:n.short, noticeTitle:n.title, ref:s.ref, title:s.title, body:s.body }));
+});
 
 /* ━━━ GLOSSARY ━━━ */
 const GLOSSARY = {
@@ -206,12 +230,14 @@ function retrieve(query, noticeFilter='all', k=5) {
 }
 
 /* ━━━ STATE ━━━ */
-const DEFAULT_CFG = { provider:'gemini', apiKey:'', model:'gemini-2.5-flash', ollamaUrl:'http://localhost:11434', ollamaModel:'qwen2.5:7b' };
+const DEFAULT_CFG = { provider:'gemini', apiKey:'', model:'gemini-2.5-flash', ollamaUrl:'http://localhost:11434', ollamaModel:'qwen2.5:7b', profile:'both' };
 const DEFAULT_LIMITS = [
   { id:'n3i', label:'Individual FCY investment', notice:'Notice 3 · with DRB', limit:1000000, used:0 },
   { id:'n2i', label:'Individual FCY borrowing', notice:'Notice 2 · Part A', limit:10000000, used:0 },
   { id:'n3e', label:'Entity FCY investment', notice:'Notice 3 · group basis', limit:50000000, used:0 },
 ];
+/* which profile each limit tracker belongs to — drives the Dashboard's Individual/Entity/Both filter */
+const LIMIT_PROFILE = { n3i:'individual', n2i:'individual', n3e:'entity' };
 const DEFAULT_DECLS = [
   { id:1, t:'Export proceeds — Q1 shipment approaching 6-month window', d:'Notice 7 · due 30 Jun 2026', done:false },
   { id:2, t:'Dynamic hedging quarterly position update', d:'Notice 1 · FEP Authority portal', done:false },
@@ -224,6 +250,7 @@ const ST = {
   decls: JSON.parse(localStorage.getItem('fep_decls')||'null') || DEFAULT_DECLS,
   sessions: JSON.parse(localStorage.getItem('fep_sess')||'[]'),
   activity: JSON.parse(localStorage.getItem('fep_activity')||'[]'),
+  activityFilter:'all', activitySearch:'',
   msgs: [], loading:false, advisorFilter:'all',
   toolTab:'scan', analystImport:null, modalNotice:null,
 };
@@ -250,22 +277,65 @@ const ACTIVITY_ICONS = {
   advisor:'ti-message-dots', analyst:'ti-checkup-list', scan:'ti-scan', pdf:'ti-file-type-pdf',
   limit:'ti-gauge', declaration:'ti-clipboard-check', notice:'ti-book-2', check:'ti-help-hexagon',
 };
+const ACTIVITY_LABELS = {
+  advisor:'Advisor', analyst:'Analyst', scan:'Image scan', pdf:'PDF',
+  limit:'Limits', declaration:'Declarations', notice:'Notices', check:'Am I Affected?',
+};
 function logActivity(type, text) {
   ST.activity.unshift({ id: Date.now()+'_'+Math.random().toString(36).slice(2), ts: Date.now(), type, text });
   if (ST.activity.length > MAX_ACTIVITY) ST.activity = ST.activity.slice(0, MAX_ACTIVITY);
   save('fep_activity', ST.activity);
   if (ST.tab === 'dashboard') renderActivity();
 }
+function renderActivityFilters() {
+  const bar = $('activity-filters'); if (!bar) return;
+  const types = [...new Set(ST.activity.map(a => a.type))];
+  bar.innerHTML = '';
+  if (types.length < 2) { bar.classList.add('hidden'); return; }
+  bar.classList.remove('hidden');
+  const mkPill = (id, label) => {
+    const b = mkEl('button', 'npill'+(ST.activityFilter===id?' on':''), esc(label));
+    b.addEventListener('click', () => { ST.activityFilter = id; renderActivity(); });
+    return b;
+  };
+  bar.appendChild(mkPill('all','All'));
+  types.forEach(t => bar.appendChild(mkPill(t, ACTIVITY_LABELS[t] || t)));
+}
 function renderActivity() {
   const ul = $('activity-list'); if (!ul) return;
+  renderActivityFilters();
   ul.innerHTML = '';
-  if (!ST.activity.length) { ul.appendChild(mkEl('li','activity-empty','No activity recorded yet — actions across the app will appear here.')); return; }
-  ST.activity.forEach(a => {
+  let items = ST.activity;
+  if (ST.activityFilter !== 'all') items = items.filter(a => a.type === ST.activityFilter);
+  const q = ST.activitySearch.trim().toLowerCase();
+  if (q) items = items.filter(a => a.text.toLowerCase().includes(q));
+  if (!items.length) {
+    const msg = ST.activity.length ? 'No activity matches your search or filter.' : 'No activity recorded yet — actions across the app will appear here.';
+    ul.appendChild(mkEl('li','activity-empty', msg));
+    return;
+  }
+  items.forEach(a => {
     const li = mkEl('li','activity-item');
     li.innerHTML = `<i class="ti ${ACTIVITY_ICONS[a.type] || 'ti-circle'}"></i>
       <div class="activity-body"><div class="activity-text">${esc(a.text)}</div><div class="activity-ts">${new Date(a.ts).toLocaleString('en-MY')}</div></div>`;
     ul.appendChild(li);
   });
+}
+function exportActivity() {
+  if (!ST.activity.length) return toast('No activity to export');
+  const header = 'Timestamp,Type,Description\n';
+  const rows = ST.activity.map(a => {
+    const ts = new Date(a.ts).toISOString();
+    const text = '"' + a.text.replace(/"/g, '""') + '"';
+    return `${ts},${a.type},${text}`;
+  }).join('\n');
+  const blob = new Blob([header + rows], { type:'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url; link.download = `fep-compass-activity-${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(link); link.click(); link.remove();
+  URL.revokeObjectURL(url);
+  toast('Activity log exported');
 }
 
 /* wrap glossary terms in text with clickable chips */
@@ -439,8 +509,27 @@ function verdictCard(data, chunks, isPartial) {
     chunks.forEach(c => { const k = `${c.noticeName} ${c.ref}`; if (!seen.has(k)) { seen.add(k); srcs.appendChild(mkEl('span','vsrc-tag',esc(k))); } });
     card.appendChild(srcs);
   }
+  const foot = mkEl('div','vfoot');
+  const printBtn = mkEl('button','vprint-btn','<i class="ti ti-printer"></i> Save as PDF');
+  printBtn.addEventListener('click', () => printVerdict(card));
+  foot.appendChild(printBtn);
+  card.appendChild(foot);
   return card;
 }
+/* clone a verdict card into the dedicated print area and trigger the browser's print/Save-as-PDF dialog */
+function printVerdict(card) {
+  const area = $('print-area');
+  const clone = card.cloneNode(true);
+  clone.querySelectorAll('.vfoot').forEach(el => el.remove());
+  area.innerHTML = `<div class="print-head">
+    <h1>FEP Compass — Compliance Verdict</h1>
+    <p>Generated ${esc(new Date().toLocaleString('en-MY'))} · Educational guidance only — not legal advice. Verify complex cases with the FEP Authority.</p>
+  </div>`;
+  area.appendChild(clone);
+  document.body.classList.add('printing');
+  window.print();
+}
+window.addEventListener('afterprint', () => document.body.classList.remove('printing'));
 function rawCard(raw) {
   const w = mkEl('div','');
   w.appendChild(mkEl('div','msg-raw-label','<i class="ti ti-alert-circle"></i>Raw AI response — could not parse a structured verdict'));
@@ -456,6 +545,16 @@ function provisionList(chunks, title='Most relevant provisions (reference lookup
        <div class="rtitle">${esc(c.title)}</div><div class="rexcerpt">${esc(c.body)}</div>`);
     w.appendChild(card);
   });
+  return w;
+}
+/* shown when an AI call fails — degrade to a reference-only lookup instead of a bare error */
+function aiFallbackBlock(err, chunks) {
+  const w = mkEl('div','');
+  w.appendChild(mkEl('div','error-msg','<i class="ti ti-wifi-off"></i> AI unavailable: ' + esc(err.message)));
+  if (chunks?.length) {
+    w.appendChild(mkEl('div','vwarn', 'Showing the most relevant FEP provisions below for reference — review manually or retry once the AI provider is reachable.'));
+    w.appendChild(provisionList(chunks, 'Reference results (AI unavailable)'));
+  }
   return w;
 }
 
@@ -484,7 +583,10 @@ function ringSVG(pct, color) {
 }
 function renderRings() {
   const wrap = $('rings'); wrap.innerHTML = '';
-  ST.limits.forEach(L => {
+  const profile = ST.cfg.profile || 'both';
+  const limits = profile === 'both' ? ST.limits : ST.limits.filter(L => LIMIT_PROFILE[L.id] === profile);
+  if (!limits.length) { wrap.appendChild(mkEl('div','ring-empty','No limit trackers for this profile.')); return; }
+  limits.forEach(L => {
     const pct = L.used / L.limit;
     const color = pct >= .9 ? 'var(--red)' : pct >= .7 ? 'var(--amber)' : 'var(--teal)';
     const card = mkEl('div','ring-card');
@@ -571,6 +673,10 @@ function renderDashboard() {
 $('activity-clear').addEventListener('click', () => {
   ST.activity = []; save('fep_activity', ST.activity); renderActivity(); toast('Activity log cleared');
 });
+$('activity-export').addEventListener('click', exportActivity);
+$('activity-search').addEventListener('input', e => {
+  ST.activitySearch = e.target.value; renderActivity();
+});
 
 /* ━━━ NOTICES HUB ━━━ */
 function renderNoticeCards() {
@@ -618,14 +724,9 @@ $('notices-q').addEventListener('input', renderNoticeSearch);
 $('notices-clear').addEventListener('click', () => { $('notices-q').value=''; renderNoticeSearch(); });
 
 /* notice detail modal */
-function openNotice(id, focusRef) {
-  const n = NOTICES[id]; if (!n) return;
-  ST.modalNotice = id;
-  $('nm-tag').textContent = `NOTICE ${n.id} · ${n.secs.length} PROVISIONS`;
-  $('nm-name').textContent = n.title;
-  const body = $('nm-body'); body.innerHTML = '';
-  body.appendChild(mkEl('div','sec-hdr','Tap any provision to expand · dotted terms have definitions'));
-  n.secs.forEach(s => {
+/* render an accordion of {ref,title,body} entries (provisions or FAQs) into a container */
+function renderAccordion(list, container, focusRef) {
+  list.forEach(s => {
     const prov = mkEl('div','prov');
     const head = mkEl('button','prov-head',
       `<span class="prov-ref">${esc(s.ref)}</span><span class="prov-title">${esc(s.title)}</span><i class="ti ti-chevron-down prov-chev"></i>`);
@@ -636,9 +737,49 @@ function openNotice(id, focusRef) {
       bwrap.style.maxHeight = open ? bwrap.scrollHeight + 'px' : '0';
     });
     prov.appendChild(head); prov.appendChild(bwrap);
-    body.appendChild(prov);
+    container.appendChild(prov);
     if (focusRef && s.ref === focusRef) setTimeout(() => { head.click(); prov.scrollIntoView({behavior:'smooth', block:'center'}); }, 250);
   });
+}
+function openNotice(id, focusRef) {
+  const n = NOTICES[id]; if (!n) return;
+  ST.modalNotice = id;
+  const hasFaqs = n.faqs?.length > 0;
+  $('nm-tag').textContent = `NOTICE ${n.id} · ${n.secs.length} PROVISIONS${hasFaqs ? ' · ' + n.faqs.length + ' FAQS' : ''}`;
+  $('nm-name').textContent = n.title;
+  const body = $('nm-body'); body.innerHTML = '';
+
+  if (hasFaqs) {
+    const tabs = mkEl('div','nm-tabs');
+    const provBtn = mkEl('button','npill on', `Provisions (${n.secs.length})`);
+    const faqBtn = mkEl('button','npill', `FAQs (${n.faqs.length})`);
+    tabs.appendChild(provBtn); tabs.appendChild(faqBtn);
+    body.appendChild(tabs);
+
+    const provWrap = mkEl('div','nm-panel');
+    provWrap.appendChild(mkEl('div','sec-hdr','Tap any provision to expand · dotted terms have definitions'));
+    renderAccordion(n.secs, provWrap, focusRef);
+
+    const faqWrap = mkEl('div','nm-panel hidden');
+    faqWrap.appendChild(mkEl('div','sec-hdr','Frequently asked questions — tap to expand'));
+    renderAccordion(n.faqs, faqWrap, focusRef);
+
+    body.appendChild(provWrap); body.appendChild(faqWrap);
+
+    const showTab = (tab) => {
+      provWrap.classList.toggle('hidden', tab !== 'prov');
+      faqWrap.classList.toggle('hidden', tab !== 'faq');
+      provBtn.classList.toggle('on', tab === 'prov');
+      faqBtn.classList.toggle('on', tab === 'faq');
+    };
+    provBtn.addEventListener('click', () => showTab('prov'));
+    faqBtn.addEventListener('click', () => showTab('faq'));
+    if (focusRef && n.faqs.some(f => f.ref === focusRef)) showTab('faq');
+  } else {
+    body.appendChild(mkEl('div','sec-hdr','Tap any provision to expand · dotted terms have definitions'));
+    renderAccordion(n.secs, body, focusRef);
+  }
+
   openOverlay('notice-overlay');
   logActivity('notice', `Viewed Notice ${n.short} — ${n.title}`);
 }
@@ -922,8 +1063,8 @@ $('analyst-form').addEventListener('submit', async e => {
     logActivity('analyst', `Compliance check: ${who} — ${what} → ${p.ok ? (VCFG[p.data.verdict]?.label || p.data.verdict) : 'unparsed response'}`);
   } catch (err) {
     load.remove();
-    out.appendChild(mkEl('div','error-msg', esc(err.message)));
-    out.appendChild(provisionList(chunks));
+    out.appendChild(aiFallbackBlock(err, chunks));
+    logActivity('analyst', `Compliance check: ${who} — ${what} → AI unavailable, showed reference provisions`);
   } finally {
     $('analyst-run').disabled = false;
     out.scrollIntoView({ behavior:'smooth', block:'nearest' });
@@ -975,8 +1116,8 @@ async function sendChat() {
   const load = mkEl('div','loading','<span class="dot"></span><span class="dot"></span><span class="dot"></span>');
   m.appendChild(load); m.scrollTop = m.scrollHeight;
   ST.loading = true;
+  const chunks = retrieve(q, ST.advisorFilter, 5);
   try {
-    const chunks = retrieve(q, ST.advisorFilter, 5);
     const raw = await callAI(q, chunks, ST.msgs.slice(0,-1));
     load.remove();
     const wrap = mkEl('div','msg-ai');
@@ -993,7 +1134,10 @@ async function sendChat() {
     save('fep_sess', ST.sessions);
   } catch (err) {
     load.remove();
-    m.appendChild(mkEl('div','error-msg', esc(err.message)));
+    const wrap = mkEl('div','msg-ai');
+    wrap.appendChild(aiFallbackBlock(err, chunks));
+    m.appendChild(wrap);
+    logActivity('advisor', `Advisor query: "${q.slice(0,70)}${q.length>70?'…':''}" → AI unavailable, showed reference provisions`);
   } finally {
     ST.loading = false;
     m.scrollTop = m.scrollHeight;
@@ -1043,7 +1187,24 @@ const GEMINI_MODELS = [
 function renderSettings() {
   const el = $('settings-content'); el.innerHTML = '';
   const c = ST.cfg;
-  const sec = mkEl('div','card');
+
+  const profileCard = mkEl('div','card');
+  profileCard.innerHTML = `<div class="card-head"><h2><i class="ti ti-users"></i> Profile</h2></div>
+  <p class="card-hint" style="margin-bottom:12px">Choose which FEP limit trackers appear on your Dashboard — this does not change AI Advisor or Compliance Analyst answers.</p>
+  <div class="provider-opts profile-opts">
+    <button class="popt ${c.profile==='individual'?'on':''}" data-pr="individual"><span class="popt-id">Individual</span><span class="popt-note">Personal FCY limits — Notices 2 &amp; 3</span></button>
+    <button class="popt ${c.profile==='entity'?'on':''}" data-pr="entity"><span class="popt-id">Entity</span><span class="popt-note">Company / group FCY limits — Notice 3</span></button>
+    <button class="popt ${c.profile==='both'?'on':''}" data-pr="both"><span class="popt-id">Both</span><span class="popt-note">Show all limit trackers</span></button>
+  </div>`;
+  el.appendChild(profileCard);
+  profileCard.querySelectorAll('.popt').forEach(b => b.addEventListener('click', () => {
+    c.profile = b.dataset.pr; save('fep_cfg', c);
+    profileCard.querySelectorAll('.popt').forEach(x => x.classList.toggle('on', x.dataset.pr === c.profile));
+    renderRings();
+    toast(`Profile set to ${b.querySelector('.popt-id').textContent}`);
+  }));
+
+  const sec = mkEl('div','card'); sec.style.marginTop = '16px';
   sec.innerHTML = `<div class="card-head"><h2><i class="ti ti-plug-connected"></i> AI Provider</h2></div>
   <div class="provider-opts">
     <button class="popt ${c.provider==='gemini'?'on':''}" data-p="gemini"><span class="popt-id">Gemini</span><span class="popt-note">Cloud · free API key from Google AI Studio</span></button>
@@ -1120,9 +1281,29 @@ function renderSettings() {
       setTimeout(() => { delete clearBtn.dataset.armed; clearBtn.innerHTML = '<i class="ti ti-trash"></i> Clear all local data'; }, 3500);
       return;
     }
-    ['fep_cfg','fep_sess','fep_limits','fep_decls'].forEach(k => localStorage.removeItem(k));
+    ['fep_cfg','fep_sess','fep_limits','fep_decls','fep_activity','fep_onboarded'].forEach(k => localStorage.removeItem(k));
     location.reload();
   });
+}
+
+/* ━━━ ONBOARDING (first-run walkthrough) ━━━ */
+const ONBOARDING_KEY = 'fep_onboarded';
+function initOnboarding() {
+  if (localStorage.getItem(ONBOARDING_KEY)) return;
+  const card = $('onboarding-card');
+  card.classList.remove('hidden');
+  card.querySelectorAll('.onboarding-step').forEach(b => b.addEventListener('click', () => {
+    const step = b.dataset.step;
+    if (step === 'explore') openNotice(1);
+    else if (step === 'check') openQuickCheck(1);
+    else if (step === 'settings') switchTab('settings');
+    dismissOnboarding();
+  }));
+  $('onboarding-dismiss').addEventListener('click', dismissOnboarding);
+}
+function dismissOnboarding() {
+  localStorage.setItem(ONBOARDING_KEY, '1');
+  $('onboarding-card').classList.add('hidden');
 }
 
 /* ━━━ PWA — offline service worker (https / localhost only) ━━━ */
@@ -1140,3 +1321,4 @@ renderAdvisorPills();
 renderAdvisorEmpty();
 renderSettings();
 buildBM25();
+initOnboarding();
